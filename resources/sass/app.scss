@@ -6,3 +6,44 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+//Markdown CSS
+img[src*="#thumbnail"] {
+    width:150px;
+    height:100px;
+ }
+
+.form-wrapper{
+    width: 100%;
+    height: 600px;
+    background-image: url('/Images/team.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: none;
+    position: absolute;
+}
+.register-wrapper{
+    position: relative;
+    // z-index: 100;
+    // background-color: rgba(0,0,0,0.2);
+}
+.login-wrapper{
+    width: 100%;
+    height: 600px;
+    background-image: url('/Images/img (7).jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: none;
+    position: absolute;
+}
+.card{
+    background-color: rgba(0,0,0,0.1);
+    color: #fff;
+}
+.card-header{
+    // place-items: center;
+    text-align: center;
+}
+.btn-link{
+    color: #fff;
+}
