@@ -7,6 +7,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Markdown CSS
+img[src*="#thumbnail"] {
+    width:150px;
+    height:100px;
+ }
+
 .form-wrapper{
     width: 100%;
     height: 600px;
