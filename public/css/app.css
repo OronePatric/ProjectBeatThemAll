@@ -11288,7 +11288,7 @@ textarea.form-control-lg {
 }
 .form-wrapper {
   width: 100%;
-  height: 800px;
+  height: 600px;
   background-image: url("/Images/team.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -11300,6 +11300,16 @@ textarea.form-control-lg {
   position: relative;
 }
 
+.login-wrapper {
+  width: 100%;
+  height: 600px;
+  background-image: url("/Images/img (7).jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: none;
+  position: absolute;
+}
+
 .card {
   background-color: rgba(0, 0, 0, 0.1);
   color: #fff;
@@ -11307,4 +11317,8 @@ textarea.form-control-lg {
 
 .card-header {
   text-align: center;
+}
+
+.btn-link {
+  color: #fff;
 }
