@@ -15,7 +15,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -23,9 +22,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md   fixed-top" id="nav_bar">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand text-white" id="logo" href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'Macasu Website') }} -->
                     Macasu Website
                 </a>
@@ -35,8 +34,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    <ul class="navbar-nav ml-auto">
+                        <li><a href="#" target="_blank" class="nav-link text-white">InSideDashboard</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -45,23 +44,35 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
+                            <li>
+                                <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown"data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"v-pre>About</a>
+                                <div class="dropdown-menu dropdown-position" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">About Macasu</a>
+                                    <a class="dropdown-item" href="#">Community Members</a>
+                                    <a class="dropdown-item" href="#">Leadership</a>
+                                    {{-- <li><hr class="dropdown-divider"></li> --}}
+                                    <a class="dropdown-item" href="#">Contacts</a>
+                                </div>
+                            </li>
+                            <li><a href="#" class="nav-link text-white">Services</a></li>
+                            <li><a href="#" class="nav-link text-white">Contacts</a></li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-black" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -77,10 +88,28 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
+        {{-- <section>
+
+        </section> --}}
     </div>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        // #1a1919c7
+        function scrollFunction() {
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+                document.getElementById("nav_bar").style.padding = "15px 0px";
+                // document.getElementById("logo").style.fontSize = "20px";
+                document.getElementById("nav_bar").style.backgroundColor = "green";
+                document.getElementById("nav_bar").style.fontSize = "18px";
+            } else {
+                document.getElementById("nav_bar").style.padding = "25px 0px";
+                document.getElementById("logo").style.fontSize = "25px";
+                document.getElementById("nav_bar").style.backgroundColor = "rgba(0,0,0,0.1) !important";
+            }
+        }
+    </script>
 </body>
 </html>
